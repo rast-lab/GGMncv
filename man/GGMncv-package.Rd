@@ -2,6 +2,7 @@
 % Please edit documentation in R/GGMncv-package.R
 \docType{package}
 \name{GGMncv-package}
+\alias{GGMncv}
 \alias{GGMncv-package}
 \title{GGMncv:  Gaussian Graphical Models with Nonconvex Regularization}
 \description{
@@ -65,4 +66,20 @@ Further, a survey (or review) of these penalties can be found in
 }
 \references{
 \insertAllCited{}
+}
+\seealso{
+Useful links:
+\itemize{
+  \item Report bugs at \url{https://github.com/rast-lab/GGMncv/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philippe Rast \email{rast.ph@gmail.com}
+
+Authors:
+\itemize{
+  \item Donald Williams \email{drwwilliams@ucdavis.edu}
+}
+
 }

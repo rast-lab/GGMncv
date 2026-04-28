@@ -62,7 +62,8 @@
 #' @references
 #' \insertAllCited{}
 #'
-#' @docType package
+#' @importFrom Rdpack reprompt
+#' @importFrom mathjaxr preview_rd
 #'
 #' @name GGMncv-package
-NULL
+"_PACKAGE"
