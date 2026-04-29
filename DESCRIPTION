@@ -4,7 +4,7 @@ Title: Gaussian Graphical Models with Nonconvex Regularization
 Version: 2.1.1.900
 Date: 2026-4-28
 Authors@R: c(person("Donald", "Williams", email = "drwwilliams@ucdavis.edu", role = "aut"),
-	     person("Philippe", "Rast", email = "rast.ph@gmail.com", role = c("aut", "cre")))
+	     person("Philippe", "Rast", email = "rast.ph@gmail.com", role = c("cre")))
 Description: Estimate Gaussian graphical models with nonconvex penalties <doi:10.31234/osf.io/ad57p>, 
   including the atan Wang and Zhu (2016) <doi:10.1155/2016/6495417>, 
   seamless L0 Dicker, Huang, and Lin (2013) <doi:10.5705/ss.2011.074>,
