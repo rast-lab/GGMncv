@@ -1,4 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- Create with: rmarkdown::render("README.Rmd", output_format = "md_document") -->
 
 <img src="man/figures/hex.png" width = 200 />
 
@@ -30,7 +31,7 @@ used to compare GGMs.
 
 ## Installation
 
-You can install the released version (`2.0.0`) of **GGMncv** from
+You can install the released version (`2.1.2`) of **GGMncv** from
 [CRAN](https://CRAN.R-project.org) with:
 
     install.packages("GGMncv")
@@ -39,7 +40,7 @@ You can install development version from [GitHub](https://github.com/)
 with:
 
     # install.packages("devtools")
-    devtools::install_github("donaldRwilliams/GGMncv")
+    devtools::install_github("rast-lab/GGMncv")
 
 ## Penalties
 
