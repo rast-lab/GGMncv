@@ -1,7 +1,7 @@
 Package: GGMncv
 Type: Package
 Title: Gaussian Graphical Models with Nonconvex Regularization
-Version: 2.1.1.900
+Version: 2.1.1.9000 
 Date: 2026-4-28
 Authors@R: c(person("Donald", "Williams", email = "drwwilliams@ucdavis.edu", role = "aut"),
 	     person("Philippe", "Rast", email = "rast.ph@gmail.com", role = c("cre")))
