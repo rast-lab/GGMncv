@@ -1,111 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//index.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/bfi.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/boot_eip.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/coef.ggmncv.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/compare_edges.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/confirm_edges.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/constrained.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/desparsify.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/gen_net.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/get_graph.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/GGMncv-package.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/ggmncv.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/head.eip.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/inference.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/kl_mvn.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/ledoit_wolf.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/nct.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/penalty_derivative.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/penalty_function.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/plot.eip.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/plot.ggmncv.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/plot.graph.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/plot.penalty_derivative.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/plot.penalty_function.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/predict.ggmncv.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/print.eip.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/print.ggmncv.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/print.nct.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/ptsd.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/Sachs.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//reference/score_binary.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//articles/cpu_time.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//articles/high_dim.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//articles/nct_custom.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//articles/null_dist.html</loc>
-  </url>
-  <url>
-    <loc>https://donaldrwilliams.github.io/GGMncv//articles/sign_restrict.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/404.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/LICENSE-text.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/cpu_time.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/high_dim.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/index.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/nct_custom.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/null_dist.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/articles/sign_restrict.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/authors.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/index.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/news/index.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/GGMncv-package.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/Sachs.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/bfi.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/boot_eip.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/coef.ggmncv.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/compare_edges.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/confirm_edges.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/constrained.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/desparsify.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/gen_net.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/get_graph.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/ggmncv.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/head.eip.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/index.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/inference.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/kl_mvn.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/ledoit_wolf.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/nct.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/penalty_derivative.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/penalty_function.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/plot.eip.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/plot.ggmncv.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/plot.graph.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/plot.penalty_derivative.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/plot.penalty_function.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/predict.ggmncv.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/print.eip.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/print.ggmncv.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/print.nct.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/ptsd.html</loc></url>
+<url><loc>https://donaldrwilliams.github.io/GGMncv/reference/score_binary.html</loc></url>
 </urlset>
+
