@@ -1,22 +1,15 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <img src="man/figures/hex.png" width = 200 />
 
 # GGMncv: Gaussian Graphical Models with Non-Convex Penalties
 
-[![CRAN
-Version](http://www.r-pkg.org/badges/version/GGMncv)](https://cran.r-project.org/package=GGMncv)
-[![Downloads](https://cranlogs.r-pkg.org/badges/GGMncv)](https://cran.r-project.org/package=GGMncv)
-[![Build
-Status](https://travis-ci.org/donaldRwilliams/GGMncv.svg?branch=master)](https://travis-ci.org/donaldRwilliams/GGMncv)
-
 The primary goal of GGMncv is to provide non-convex penalties for
 estimating Gaussian graphical models. These are known to overcome the
 various limitations of lasso (least absolute shrinkage “screening”
 operator), including inconsistent model selection (Zhao and Yu 2006),
-biased estimates (C.-H. Zhang 2010)<span id="a1">[\[1\]](#f1)</span>,
-and a high false positive rate (see for example Williams and Rast 2020;
+biased estimates (Zhang 2010)<span id="a1">[\[1\]](#f1)</span>, and a
+high false positive rate (see for example Williams and Rast 2020;
 Williams et al. 2019).
 
 Note that these limitations of lasso are well-known. In the case of
@@ -24,7 +17,7 @@ false positives, for example, it has been noted that
 
 > The lasso is doing variable screening and, hence, I suggest that we
 > interpret the second ‘s’ in lasso as ‘screening’ rather than
-> ‘selection.’ Once we have the screening property, the task is to
+> ‘selection’. Once we have the screening property, the task is to
 > remove the false positive selections (p. 278, Tibshirani 2011).
 
 An additional goal of **GGMncv** is to provide methods for making
@@ -40,17 +33,13 @@ used to compare GGMs.
 You can install the released version (`2.0.0`) of **GGMncv** from
 [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("GGMncv")
-```
+    install.packages("GGMncv")
 
 You can install development version from [GitHub](https://github.com/)
 with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("donaldRwilliams/GGMncv")
-```
+    # install.packages("devtools")
+    devtools::install_github("donaldRwilliams/GGMncv")
 
 ## Penalties
 
@@ -59,23 +48,22 @@ The following are implemented in `GGMncv`:
 1.  Atan (`penalty = "atan"`; Wang and Zhu (2016)). This is currently
     the default.
 
-2.  Seamless *L*<sub>0</sub> (`penalty = "selo"`; Dicker, Huang, and
-    Lin (2013))
+2.  Seamless *L*<sub>0</sub> (`penalty = "selo"`; Dicker et al. (2013))
 
-3.  Exponential (`penalty = "exp"`; Wang, Fan, and Zhu (2018))
+3.  Exponential (`penalty = "exp"`; Wang et al. (2018))
 
 4.  Smooth integration of counting and absolute deviation
     (`penalty = "sica"`; Lv and Fan (2009))
 
-5.  Log (`penalty = "log"`; Mazumder, Friedman, and Hastie (2011))
+5.  Log (`penalty = "log"`; Mazumder et al. (2011))
 
-6.  *L*<sub>q</sub> (`penalty = "lq"`, *0* \< *q* \< *1*; e.g., Knight
-    and Fu (2000))
+6.  *L*<sub>q</sub> (`penalty = "lq"`, *0* &lt; *q* &lt; *1*; e.g.,
+    Knight and Fu (2000))
 
-7.  Smoothly clipped absolute deviation (`penalty = "scad"`; Fan and
-    Li (2001))
+7.  Smoothly clipped absolute deviation (`penalty = "scad"`; Fan and Li
+    (2001))
 
-8.  Minimax concave penalty (`penalty = "mcp"`; C.-H. Zhang (2010))
+8.  Minimax concave penalty (`penalty = "mcp"`; Zhang (2010))
 
 9.  Adaptive lasso (`penalty = "adapt"`; Zou (2006))
 
@@ -84,8 +72,8 @@ The following are implemented in `GGMncv`:
 Options 1-5 are continuous approximations to the *L*<sub>0</sub>
 penalty, that is, best subsets model selection. However, the solution is
 computationally efficient and solved with the local linear approximation
-described in Fan, Feng, and Wu (2009) or the one-step approach described
-in Zou and Li (2008).
+described in Fan et al. (2009) or the one-step approach described in Zou
+and Li (2008).
 
 ### Penalty Function
 
@@ -106,10 +94,10 @@ regularization; and (2) the penalty “tapers” off for large effects.
 Computing the non-convex solution is a challenging task. However,
 section 3.3 in Zou and Li (2008) indicates that the one-step approach is
 a viable **approximation** for a variety of non-convex penalties,
-assuming the initial estimates are “good enough”<span
-id="a2">[\[2\]](#f2)</span>. To this end, the initial values can either
-be the sample based inverse covariance matrix or a custom matrix
-specified with `initial`.
+assuming the initial estimates are “good
+enough”<span id="a2">[\[2\]](#f2)</span>. To this end, the initial
+values can either be the sample based inverse covariance matrix or a
+custom matrix specified with `initial`.
 
 ## Tuning Parameter
 
@@ -118,7 +106,7 @@ specified with `initial`.
 The tuning parameter can be selected with several information criteria
 (IC), including `aic`, `bic` (currently the default),`ebic`, `ric`, in
 addition to any of the *generalized* information criteria provided in
-section 5 of Kim, Kwon, and Choi (2012).
+section 5 of Kim et al. (2012).
 
 Information criterion can be understood as penalizing the likelihood,
 with the difference being in the severity of the penalty. -2 times the
@@ -133,39 +121,39 @@ is the estimated precision matrix and
 is the sample based covariance matrix. The included criterion then add
 the following penalties:
 
--   GIC<sub>1</sub> (BIC):
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Blog%7D%28n%29)
+- GIC<sub>1</sub> (BIC):
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Blog%7D%28n%29)
 
 Note that
 ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C)
 refers to the cardinality of the edge set, that is, the number of edges.
 
--   GIC<sub>2</sub>:
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20p%5E%7B1/3%7D)
+- GIC<sub>2</sub>:
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20p%5E%7B1/3%7D)
 
 *p* denotes the number of nodes or columns in the data matrix.
 
--   GIC<sub>3</sub> (RIC):
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%202%20%5Ctext%7Blog%7D%28p%29)
+- GIC<sub>3</sub> (RIC):
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%202%20%5Ctext%7Blog%7D%28p%29)
 
--   GIC<sub>4</sub>:
-    ![](https://latex.codecogs.com/svg.latex?2%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%5Ctext%7Blog%7D%28p%29%20+%20%5Ctext%7Bloglog%7D%28p%29)
+- GIC<sub>4</sub>:
+  ![](https://latex.codecogs.com/svg.latex?2%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%5Ctext%7Blog%7D%28p%29%20+%20%5Ctext%7Bloglog%7D%28p%29)
 
--   GIC<sub>5</sub> (BIC with divergent dimensions):
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Bloglog%7D%28n%29%5Ctext%7Blog%7D%28p%29)
+- GIC<sub>5</sub> (BIC with divergent dimensions):
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Bloglog%7D%28n%29%5Ctext%7Blog%7D%28p%29)
 
--   GIC<sub>6</sub>:
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Blog%7D%28n%29%5Ctext%7Blog%7D%28p%29)
+- GIC<sub>6</sub>:
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Ctext%7Blog%7D%28n%29%5Ctext%7Blog%7D%28p%29)
 
--   AIC:
-    ![](https://latex.codecogs.com/svg.latex?2%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C)
+- AIC:
+  ![](https://latex.codecogs.com/svg.latex?2%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C)
 
 Although cross-validation is not implemented for selecting the tuning
 parameter, AIC can be used to approximate leave-one-out
 cross-validation.
 
--   EBIC:
-    ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%5Ctext%7Blog%7D%28n%29%20+%204%20%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Cgamma%20%5Ctext%7Blog%7D%28p%29%2C%5C%3B%20%5C0%20%5Cleq%20%5Cgamma%20%5Cleq%201)
+- EBIC:
+  ![](https://latex.codecogs.com/svg.latex?%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%5Ctext%7Blog%7D%28n%29%20+%204%20%7C%5Ctext%7B%5Cbf%7BE%7D%7D%7C%20%5Cgamma%20%5Ctext%7Blog%7D%28p%29%2C%5C%3B%20%5C0%20%5Cleq%20%5Cgamma%20%5Cleq%201)
 
 The tuning parameter is selected by setting `select = TRUE` and then the
 desired IC with, for example, `ic = "gic_3"`.
@@ -175,42 +163,40 @@ desired IC with, for example, `ic = "gic_3"`.
 A tuning free option is also available. This is accomplished by setting
 the tuning parameter to
 ![](https://latex.codecogs.com/svg.latex?%5Csmall%20%5Csqrt%7Blog%28p%29/n%7D)
-(see for example R. Zhang, Ren, and Chen 2018; Li et al. 2015; Jankova
-and Van De Geer 2015) and then selecting
+(see for example Zhang et al. 2018; Li et al. 2015; Jankova and Van De
+Geer 2015) and then selecting
 ![](https://latex.codecogs.com/svg.latex?%5Cgamma)
 
 ## Example: Structure Learning
 
 A GGM can be fitted as follows
 
-``` r
-library(GGMncv)
+    library(GGMncv)
 
-# data
-Y <- GGMncv::ptsd[,1:10]
+    # data
+    Y <- GGMncv::ptsd[,1:10]
 
-# polychoric
-R <- cor(Y, method = "spearman")
+    # polychoric
+    R <- cor(Y, method = "spearman")
 
-# fit model
-fit <- ggmncv(R = R, n = nrow(Y), 
-              penalty = "atan")
+    # fit model
+    fit <- ggmncv(R = R, n = nrow(Y), 
+                  penalty = "atan")
 
-# print
-fit
+    # print
+    fit
 
-#>       1     2     3     4     5     6     7     8     9    10
-#> 1  0.000 0.255 0.000 0.309 0.101 0.000 0.000 0.000 0.073 0.000
-#> 2  0.255 0.000 0.485 0.000 0.000 0.000 0.122 0.000 0.000 0.000
-#> 3  0.000 0.485 0.000 0.185 0.232 0.000 0.000 0.000 0.000 0.000
-#> 4  0.309 0.000 0.185 0.000 0.300 0.000 0.097 0.000 0.000 0.243
-#> 5  0.101 0.000 0.232 0.300 0.000 0.211 0.166 0.000 0.000 0.000
-#> 6  0.000 0.000 0.000 0.000 0.211 0.000 0.234 0.079 0.000 0.000
-#> 7  0.000 0.122 0.000 0.097 0.166 0.234 0.000 0.000 0.000 0.000
-#> 8  0.000 0.000 0.000 0.000 0.000 0.079 0.000 0.000 0.000 0.114
-#> 9  0.073 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.261
-#> 10 0.000 0.000 0.000 0.243 0.000 0.000 0.000 0.114 0.261 0.000
-```
+    #>       1     2     3     4     5     6     7     8     9    10
+    #> 1  0.000 0.255 0.000 0.309 0.101 0.000 0.000 0.000 0.073 0.000
+    #> 2  0.255 0.000 0.485 0.000 0.000 0.000 0.122 0.000 0.000 0.000
+    #> 3  0.000 0.485 0.000 0.185 0.232 0.000 0.000 0.000 0.000 0.000
+    #> 4  0.309 0.000 0.185 0.000 0.300 0.000 0.097 0.000 0.000 0.243
+    #> 5  0.101 0.000 0.232 0.300 0.000 0.211 0.166 0.000 0.000 0.000
+    #> 6  0.000 0.000 0.000 0.000 0.211 0.000 0.234 0.079 0.000 0.000
+    #> 7  0.000 0.122 0.000 0.097 0.166 0.234 0.000 0.000 0.000 0.000
+    #> 8  0.000 0.000 0.000 0.000 0.000 0.079 0.000 0.000 0.000 0.114
+    #> 9  0.073 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.261
+    #> 10 0.000 0.000 0.000 0.243 0.000 0.000 0.000 0.114 0.261 0.000
 
 Note that the object `fit` can be plotted with the `R` package
 [**qgraph**](https://CRAN.R-project.org/package=qgraph).
@@ -221,28 +207,26 @@ The **GGMncv** package can also be used for prediction, given the
 correspondence between the inverse covariance matrix and multiple
 regression (Kwan 2014).
 
-``` r
-Y <- scale(Sachs)
+    Y <- scale(Sachs)
 
-# test data
-Ytest <- Y[1:100,]
+    # test data
+    Ytest <- Y[1:100,]
 
-# training data
-Ytrain <- Y[101:nrow(Y),]
+    # training data
+    Ytrain <- Y[101:nrow(Y),]
 
-# default: atan and tuning free
-fit <- ggmncv(cor(Ytrain), 
-              n = nrow(Ytrain))
+    # default: atan and tuning free
+    fit <- ggmncv(cor(Ytrain), 
+                  n = nrow(Ytrain))
 
-# predict
-pred <- predict(fit, train_data = Ytrain, newdata = Ytest)
+    # predict
+    pred <- predict(fit, train_data = Ytrain, newdata = Ytest)
 
-# print mse
-round(apply((pred - Ytest)^2, 2, mean), 2)
+    # print mse
+    round(apply((pred - Ytest)^2, 2, mean), 2)
 
-#>  Raf  Erk Plcg  PKC  PKA PIP2 PIP3  Mek  P38  Jnk  Akt 
-#> 0.18 0.27 0.59 0.42 0.39 0.47 0.69 0.16 0.15 0.69 0.26 
-```
+    #>  Raf  Erk Plcg  PKC  PKA PIP2 PIP3  Mek  P38  Jnk  Akt 
+    #> 0.18 0.27 0.59 0.42 0.39 0.47 0.69 0.16 0.15 0.69 0.26 
 
 ## Solution Path
 
@@ -253,19 +237,17 @@ can be plotted.
 
 Here is the current default penalty
 
-``` r
-# data
-Y <- ptsd
+    # data
+    Y <- ptsd
 
-# fit model
-fit <- GGMncv(cor(Y), n = nrow(Y), 
-              select = TRUE, 
-              store = TRUE)
-              
-# plot path
-plot(fit, 
-     alpha = 0.75)
-```
+    # fit model
+    fit <- GGMncv(cor(Y), n = nrow(Y), 
+                  select = TRUE, 
+                  store = TRUE)
+                  
+    # plot path
+    plot(fit, 
+         alpha = 0.75)
 
 ![](man/figures/atan_path.png)
 
@@ -278,19 +260,17 @@ compared to the smaller partial correlations.
 Next *L*<sub>1</sub> regularization is implemented by setting
 `penalty = "lasso"`.
 
-``` r
-# data
-Y <- ptsd
+    # data
+    Y <- ptsd
 
-# fit model
-fit <- GGMncv(cor(Y), n = nrow(Y), 
-              penalty = "lasso"
-              store = TRUE)
+    # fit model
+    fit <- GGMncv(cor(Y), n = nrow(Y), 
+                  penalty = "lasso"
+                  store = TRUE)
 
-# plot path
-plot(fit, 
-     alpha = 0.75)
-```
+    # plot path
+    plot(fit, 
+         alpha = 0.75)
 
 ![](man/figures/lasso_path.png)
 
@@ -313,7 +293,7 @@ approaches do not have the correct properties to be considered
 confidence intervals [(see
 Wikipedia)](https://en.wikipedia.org/wiki/Confidence_interval). This
 sentiment is echoed in Section 3.1, “Why standard bootstrapping and
-subsampling do not work,” of Bühlmann, Kalisch, and Meier (2014):
+subsampling do not work,” of Bühlmann et al. (2014):
 
 > The (limiting) distribution of such a sparse estimator is non-Gaussian
 > with point mass at zero, and this is the reason why standard bootstrap
@@ -321,9 +301,9 @@ subsampling do not work,” of Bühlmann, Kalisch, and Meier (2014):
 > p-values (pp. 7-8).
 
 For this reason, it is common to **not** provide standard errors (and
-thus confidence intervals) for penalized models <span
-id="a3">[\[3\]](#f3)</span>. For example, this is from the **penalized**
-`R` package:
+thus confidence intervals) for penalized models
+<span id="a3">[\[3\]](#f3)</span>. For example, this is from the
+**penalized** `R` package:
 
 > It is a very natural question to ask for standard errors of regression
 > coefficients or other estimated quantities. In principle such standard
@@ -331,12 +311,12 @@ id="a3">[\[3\]](#f3)</span>. For example, this is from the **penalized**
 > package deliberately does not provide them. The reason for this is
 > that standard errors are not very meaningful for strongly biased
 > estimates such as arise from penalized estimation methods (p.18,
-> Goeman, Meijer, and Chaturvedi 2018)
+> Goeman et al. 2018)
 
 However, **GGMncv** does include the so-called variable inclusion
 “probability” for each relation (see p. 1523 in Bunea et al. 2011; and
-Figure 6.7 in Hastie, Tibshirani, and Wainwright 2015). These are
-computed using a non-parametric bootstrap strategy.
+Figure 6.7 in Hastie et al. 2015). These are computed using a
+non-parametric bootstrap strategy.
 
 Additionally, more recent work does allow for obtaining confidence
 intervals and *p*-values with the de-sparsified method. For the
@@ -346,16 +326,14 @@ Inferece)](#statistical-inference).
 
 ### Variable Inclusion “Probability”
 
-``` r
-# data
-Y <- GGMncv::ptsd[,1:5]
+    # data
+    Y <- GGMncv::ptsd[,1:5]
 
-# edge inclusion
-eips <- boot_eip(Y)
+    # edge inclusion
+    eips <- boot_eip(Y)
 
-# plot
-plot(eips, size = 4)
-```
+    # plot
+    plot(eips, size = 4)
 
 ![](man/figures/vip.png)
 
@@ -363,8 +341,9 @@ plot(eips, size = 4)
 
 It might be tempting to think these approaches lead to rich *inference*.
 This would be a mistake–they suffer from all of the problems inherent to
-automated procedures for model selection (e.g., Berk et al. 2013; Lee et
-al. 2016).
+automated procedures for model selection (e.g.,
+<span class="nocase">Berk et al.</span> 2013; <span class="nocase">Lee
+et al.</span> 2016).
 
 And note that:
 
@@ -402,45 +381,43 @@ element of the de-sparsified estimator.
 
 This is implemented with
 
-``` r
-# data
-Y <- ptsd
+    # data
+    Y <- ptsd
 
-# fit model
-fit <- ggmncv(cor(Y), n = nrow(Y))
+    # fit model
+    fit <- ggmncv(cor(Y), n = nrow(Y))
 
-# make inference
-fdr_ggm <- inference(fit, method = "fdr")
+    # make inference
+    fdr_ggm <- inference(fit, method = "fdr")
 
-# print
-fdr_ggm
+    # print
+    fdr_ggm
 
-#> Statistical Inference
-#> fdr: 0.05
-#> ---
+    #> Statistical Inference
+    #> fdr: 0.05
+    #> ---
 
-#>   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-#> 1  0 1 0 1 0 0 0 0 0  0  1  0  0  0  0  0  0  0  0  0
-#> 2  1 0 1 0 0 0 0 0 0  0  0  0  0  0  0  1  0  0  0  0
-#> 3  0 1 0 1 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
-#> 4  1 0 1 0 1 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
-#> 5  0 0 0 1 0 1 0 0 0  0  0  0  0  0  1  0  0  1  0  0
-#> 6  0 0 0 0 1 0 1 0 0  0  0  0  0  0  0  0  0  0  0  0
-#> 7  0 0 0 0 0 1 0 0 0  0  0  1  0  0  0  0  0  0  0  0
-#> 8  0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
-#> 9  0 0 0 0 0 0 0 0 0  0  1  1  0  0  0  0  0  0  0  0
-#> 10 0 0 0 0 0 0 0 0 0  0  1  0  0  0  0  0  0  0  0  0
-#> 11 1 0 0 0 0 0 0 0 1  1  0  0  0  0  1  0  0  0  0  0
-#> 12 0 0 0 0 0 0 1 0 1  0  0  0  1  0  0  0  0  0  1  0
-#> 13 0 0 0 0 0 0 0 0 0  0  0  1  0  1  0  0  0  0  1  0
-#> 14 0 0 0 0 0 0 0 0 0  0  0  0  1  0  0  0  0  0  0  0
-#> 15 0 0 0 0 1 0 0 0 0  0  1  0  0  0  0  1  0  0  0  0
-#> 16 0 1 0 0 0 0 0 0 0  0  0  0  0  0  1  0  0  0  0  0
-#> 17 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  1  0  0
-#> 18 0 0 0 0 1 0 0 0 0  0  0  0  0  0  0  0  1  0  0  0
-#> 19 0 0 0 0 0 0 0 0 0  0  0  1  1  0  0  0  0  0  0  1
-#> 20 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  1  0
-```
+    #>   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+    #> 1  0 1 0 1 0 0 0 0 0  0  1  0  0  0  0  0  0  0  0  0
+    #> 2  1 0 1 0 0 0 0 0 0  0  0  0  0  0  0  1  0  0  0  0
+    #> 3  0 1 0 1 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+    #> 4  1 0 1 0 1 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+    #> 5  0 0 0 1 0 1 0 0 0  0  0  0  0  0  1  0  0  1  0  0
+    #> 6  0 0 0 0 1 0 1 0 0  0  0  0  0  0  0  0  0  0  0  0
+    #> 7  0 0 0 0 0 1 0 0 0  0  0  1  0  0  0  0  0  0  0  0
+    #> 8  0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0
+    #> 9  0 0 0 0 0 0 0 0 0  0  1  1  0  0  0  0  0  0  0  0
+    #> 10 0 0 0 0 0 0 0 0 0  0  1  0  0  0  0  0  0  0  0  0
+    #> 11 1 0 0 0 0 0 0 0 1  1  0  0  0  0  1  0  0  0  0  0
+    #> 12 0 0 0 0 0 0 1 0 1  0  0  0  1  0  0  0  0  0  1  0
+    #> 13 0 0 0 0 0 0 0 0 0  0  0  1  0  1  0  0  0  0  1  0
+    #> 14 0 0 0 0 0 0 0 0 0  0  0  0  1  0  0  0  0  0  0  0
+    #> 15 0 0 0 0 1 0 0 0 0  0  1  0  0  0  0  1  0  0  0  0
+    #> 16 0 1 0 0 0 0 0 0 0  0  0  0  0  0  1  0  0  0  0  0
+    #> 17 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  1  0  0
+    #> 18 0 0 0 0 1 0 0 0 0  0  0  0  0  0  0  0  1  0  0  0
+    #> 19 0 0 0 0 0 0 0 0 0  0  0  1  1  0  0  0  0  0  0  1
+    #> 20 0 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  1  0
 
 Note that the object `fdr_ggm` includes the de-sparsified precision
 matrix, the partial correlation matrix, and *p*-values for each
@@ -456,12 +433,10 @@ by computing the difference and then the variance of that difference.
 Assuming there is two groups, `Y_g1` and `Y_g2`, this is implemented
 with
 
-``` r
-fit1 <- ggmncv(Y_g1, n = nrow(Y_g1))
-fit2 <- ggmncv(Y_g2, n = nrow(Y_g2))
+    fit1 <- ggmncv(Y_g1, n = nrow(Y_g1))
+    fit2 <- ggmncv(Y_g2, n = nrow(Y_g2))
 
-ggm_diff <- ggm_compare(fit1, fit2)
-```
+    ggm_diff <- ggm_compare(fit1, fit2)
 
 The object `ggm_diff` includes the partial correlation differences,
 *p*-values, and the adjacency matrix.
@@ -487,235 +462,118 @@ approaches that is meant to accompany **GGMncv**.
 2.  <span id="f2"></span> In low-dimensional settings, assuming that *n*
     is sufficiently larger than *p*, the sample covariance matrix
     provides adequate initial estimates. In high-dimensional settings
-    (*n* \< *p*), the initial estimates are obtained from lasso
+    (*n* &lt; *p*), the initial estimates are obtained from lasso
     [(return)](#a2).
 
 3.  <span id="f3"></span> It is possible to compute confidence intervals
     for lasso with the methods included in the **SILGGM** `R` package
-    (R. Zhang, Ren, and Chen 2018). These do not use the bootstrap
-    [(return)](#a3).
+    (Zhang et al. 2018). These do not use the bootstrap [(return)](#a3).
 
 ## References
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<span class="nocase">Berk, Richard, Lawrence Brown, Andreas Buja, Kai
+Zhang, Linda Zhao, et al.</span> 2013. “Valid Post-Selection Inference.”
+*The Annals of Statistics* 41 (2): 802–37.
 
-<div id="ref-berk2013valid" class="csl-entry">
-
-Berk, Richard, Lawrence Brown, Andreas Buja, Kai Zhang, Linda Zhao, et
-al. 2013. “Valid Post-Selection Inference.” *The Annals of Statistics*
-41 (2): 802–37.
-
-</div>
-
-<div id="ref-Buhlmann2014" class="csl-entry">
-
-Bühlmann, Peter, Markus Kalisch, and Lukas Meier. 2014. “<span
-class="nocase">High-Dimensional Statistics with a View Toward
+Bühlmann, Peter, Markus Kalisch, and Lukas Meier. 2014.
+“<span class="nocase">High-Dimensional Statistics with a View Toward
 Applications in Biology</span>.” *Annual Review of Statistics and Its
 Application* 1 (1): 255–78.
 <https://doi.org/10.1146/annurev-statistics-022513-115545>.
-
-</div>
-
-<div id="ref-bunea2011penalized" class="csl-entry">
 
 Bunea, Florentina, Yiyuan She, Hernando Ombao, Assawin Gongvatana, Kate
 Devlin, and Ronald Cohen. 2011. “Penalized Least Squares Regression
 Methods and Applications to Neuroimaging.” *NeuroImage* 55 (4): 1519–27.
 
-</div>
-
-<div id="ref-dicker2013variable" class="csl-entry">
-
 Dicker, Lee, Baosheng Huang, and Xihong Lin. 2013. “Variable Selection
 and Estimation with the Seamless-l 0 Penalty.” *Statistica Sinica*,
 929–62.
-
-</div>
-
-<div id="ref-fan2009network" class="csl-entry">
 
 Fan, Jianqing, Yang Feng, and Yichao Wu. 2009. “Network Exploration via
 the Adaptive LASSO and SCAD Penalties.” *The Annals of Applied
 Statistics* 3 (2): 521.
 
-</div>
-
-<div id="ref-fan2001variable" class="csl-entry">
-
 Fan, Jianqing, and Runze Li. 2001. “Variable Selection via Nonconcave
 Penalized Likelihood and Its Oracle Properties.” *Journal of the
 American Statistical Association* 96 (456): 1348–60.
 
-</div>
-
-<div id="ref-goeman2018l1" class="csl-entry">
-
 Goeman, Jelle, Rosa Meijer, and Nimisha Chaturvedi. 2018. “L1 and L2
 Penalized Regression Models.” *Vignette R Package Penalized.*
-
-</div>
-
-<div id="ref-hastie2015statistical" class="csl-entry">
 
 Hastie, Trevor, Robert Tibshirani, and Martin Wainwright. 2015.
 *Statistical Learning with Sparsity: The Lasso and Generalizations*. CRC
 press.
 
-</div>
-
-<div id="ref-jankova2015confidence" class="csl-entry">
-
 Jankova, Jana, and Sara Van De Geer. 2015. “Confidence Intervals for
 High-Dimensional Inverse Covariance Estimation.” *Electronic Journal of
 Statistics* 9 (1): 1205–29.
-
-</div>
-
-<div id="ref-kim2012consistent" class="csl-entry">
 
 Kim, Yongdai, Sunghoon Kwon, and Hosik Choi. 2012. “Consistent Model
 Selection Criteria on High Dimensions.” *The Journal of Machine Learning
 Research* 13: 1037–57.
 
-</div>
-
-<div id="ref-knight2000asymptotics" class="csl-entry">
-
 Knight, Keith, and Wenjiang Fu. 2000. “Asymptotics for Lasso-Type
 Estimators.” *Annals of Statistics*, 1356–78.
-
-</div>
-
-<div id="ref-kwan2014regression" class="csl-entry">
 
 Kwan, Clarence CY. 2014. “A Regression-Based Interpretation of the
 Inverse of the Sample Covariance Matrix.” *Spreadsheets in Education* 7
 (1): 4613.
 
-</div>
-
-<div id="ref-lee2016exact" class="csl-entry">
-
-Lee, Jason D, Dennis L Sun, Yuekai Sun, Jonathan E Taylor, et al. 2016.
-“Exact Post-Selection Inference, with Application to the Lasso.” *The
-Annals of Statistics* 44 (3): 907–27.
-
-</div>
-
-<div id="ref-li2015flare" class="csl-entry">
+<span class="nocase">Lee, Jason D, Dennis L Sun, Yuekai Sun, Jonathan E
+Taylor, et al.</span> 2016. “Exact Post-Selection Inference, with
+Application to the Lasso.” *The Annals of Statistics* 44 (3): 907–27.
 
 Li, Xingguo, Tuo Zhao, Xiaoming Yuan, and Han Liu. 2015. “The Flare
 Package for High Dimensional Linear Regression and Precision Matrix
 Estimation in r.” *Journal of Machine Learning Research: JMLR* 16: 553.
 
-</div>
-
-<div id="ref-lv2009unified" class="csl-entry">
-
 Lv, Jinchi, and Yingying Fan. 2009. “A Unified Approach to Model
 Selection and Sparse Recovery Using Regularized Least Squares.” *The
 Annals of Statistics* 37 (6A): 3498–528.
-
-</div>
-
-<div id="ref-mazumder2011sparsenet" class="csl-entry">
 
 Mazumder, Rahul, Jerome H Friedman, and Trevor Hastie. 2011. “Sparsenet:
 Coordinate Descent with Nonconvex Penalties.” *Journal of the American
 Statistical Association* 106 (495): 1125–38.
 
-</div>
-
-<div id="ref-tibshirani1996regression" class="csl-entry">
-
 Tibshirani, Robert. 1996. “Regression Shrinkage and Selection via the
 Lasso.” *Journal of the Royal Statistical Society: Series B
 (Methodological)* 58 (1): 267–88.
 
-</div>
-
-<div id="ref-tibshirani2011regression" class="csl-entry">
-
-———. 2011. “Regression Shrinkage and Selection via the Lasso: A
-Retrospective.” *Journal of the Royal Statistical Society: Series B
-(Statistical Methodology)* 73 (3): 273–82.
-
-</div>
-
-<div id="ref-wang2018variable" class="csl-entry">
+Tibshirani, Robert. 2011. “Regression Shrinkage and Selection via the
+Lasso: A Retrospective.” *Journal of the Royal Statistical Society:
+Series B (Statistical Methodology)* 73 (3): 273–82.
 
 Wang, Yanxin, Qibin Fan, and Li Zhu. 2018. “Variable Selection and
 Estimation Using a Continuous Approximation to the L0 Penalty.” *Annals
 of the Institute of Statistical Mathematics* 70 (1): 191–214.
 
-</div>
-
-<div id="ref-wang2016variable" class="csl-entry">
-
 Wang, Yanxin, and Li Zhu. 2016. “Variable Selection and Parameter
 Estimation with the Atan Regularization Method.” *Journal of Probability
 and Statistics*.
 
-</div>
-
-<div id="ref-williams2020beyond" class="csl-entry">
-
 Williams, Donald R. 2020. “Beyond Lasso: A Survey of Nonconvex
 Regularization in Gaussian Graphical Models.” *PsyArXiv*.
-
-</div>
-
-<div id="ref-williams2020back" class="csl-entry">
 
 Williams, Donald R, and Philippe Rast. 2020. “Back to the Basics:
 Rethinking Partial Correlation Network Methodology.” *British Journal of
 Mathematical and Statistical Psychology* 73 (2): 187–212.
 
-</div>
-
-<div id="ref-williams2019nonregularized" class="csl-entry">
-
 Williams, Donald R, Mijke Rhemtulla, Anna C Wysocki, and Philippe Rast.
 2019. “On Nonregularized Estimation of Psychological Networks.”
 *Multivariate Behavioral Research* 54 (5): 719–50.
 
-</div>
-
-<div id="ref-zhang2010nearly" class="csl-entry">
-
 Zhang, Cun-Hui. 2010. “Nearly Unbiased Variable Selection Under Minimax
 Concave Penalty.” *The Annals of Statistics* 38 (2): 894–942.
-
-</div>
-
-<div id="ref-zhang2018silggm" class="csl-entry">
 
 Zhang, Rong, Zhao Ren, and Wei Chen. 2018. “SILGGM: An Extensive r
 Package for Efficient Statistical Inference in Large-Scale Gene
 Networks.” *PLoS Computational Biology* 14 (8): e1006369.
 
-</div>
-
-<div id="ref-zhao2006model" class="csl-entry">
-
 Zhao, Peng, and Bin Yu. 2006. “On Model Selection Consistency of Lasso.”
 *Journal of Machine Learning Research* 7 (Nov): 2541–63.
-
-</div>
-
-<div id="ref-zou2006adaptive" class="csl-entry">
 
 Zou, Hui. 2006. “The Adaptive Lasso and Its Oracle Properties.” *Journal
 of the American Statistical Association* 101 (476): 1418–29.
 
-</div>
-
-<div id="ref-zou2008one" class="csl-entry">
-
 Zou, Hui, and Runze Li. 2008. “One-Step Sparse Estimates in Nonconcave
 Penalized Likelihood Models.” *Annals of Statistics* 36 (4): 1509.
-
-</div>
-
-</div>
