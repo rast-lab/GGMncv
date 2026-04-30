@@ -1,5 +1,15 @@
 # CRAN submission GGMncv 2.1.2
 
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* Added authors and years for all references in DESCRIPTION.
+* Added \value sections to the documentation for exported methods:
+  head.eip(), print.eip(), print.ggmncv(), and print.nct().
+* Clarified the structure and meaning of the returned values, including
+  invisible returns for print methods.
+
 ## Test environments
 
 * local Arch/Manjaro Linux, R-release
