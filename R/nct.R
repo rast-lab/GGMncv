@@ -683,32 +683,38 @@ nct <- function(Y_g1, Y_g2,
 
 #' Print \code{nct} Objects
 #'
-#' @param x An object of class \code{nct}
+#' @param x An object of class \code{nct}.
 #' @param ... Currently ignored.
+#'
+#' @return Invisibly returns \code{x}, the input object of class \code{nct}.
+#'   The method is called primarily for its side effect of printing the results
+#'   of the network comparison test, including p-values for the maximum
+#'   difference, global strength, sum of squared error, and Jensen-Shannon
+#'   divergence statistics stored in the object.
+#'
 #' @export
-print.nct <- function(x, ...){
+print.nct <- function(x, ...) {
 
-  check_defaults <- length(grep("_pvalue", names(x)))
-  cat("Network Comparsion Test\n")
-  cat("(GGMncv Edition)\n")
-  cat("----\n")
-  cat("Maximum Difference\n")
-  cat("p-value:", x$max_pvalue, "\n")
-  cat("----\n")
-  cat("Global Strength\n")
-  cat("p-value:", x$glstr_pvalue, "\n")
-  cat("----\n")
-  cat("Sum of Squared Error\n")
-  cat("p-value:", x$sse_pvalue, "\n")
-  cat("----\n")
-  cat("Jensen-Shannon divergence\n")
-  cat("p-value:", x$jsd_pvalue, "\n")
-  cat("----\n")
+    check_defaults <- length(grep("_pvalue", names(x)))
+    cat("Network Comparison Test\n")
+    cat("(GGMncv Edition)\n")
+    cat("----\n")
+    cat("Maximum Difference\n")
+    cat("p-value:", x$max_pvalue, "\n")
+    cat("----\n")
+    cat("Global Strength\n")
+    cat("p-value:", x$glstr_pvalue, "\n")
+    cat("----\n")
+    cat("Sum of Squared Error\n")
+    cat("p-value:", x$sse_pvalue, "\n")
+    cat("----\n")
+    cat("Jensen-Shannon divergence\n")
+    cat("p-value:", x$jsd_pvalue, "\n")
+    cat("----\n")
 
-  if (check_defaults > 4) {
-    cat("note: compute p-values manually for custom tests. see vignettes.")
-  }
+    if (check_defaults > 4) {
+        cat("note: compute p-values manually for custom tests. see vignettes.")
+    }
 
+    invisible(x)
 }
-
-

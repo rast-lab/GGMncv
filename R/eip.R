@@ -151,13 +151,18 @@ plot.eip <- function(x, color = "black", size = 1,...){
 #'
 #' @param ... Currently ignored.
 #'
+#' @return Invisibly returns \code{x}, the input object of class \code{eip}.
+#'   The method is called for its side effect of printing a data frame with
+#'   the edge relations and their edge inclusion probabilities.
+#' 
 #' @export
-print.eip <- function(x, ...){
-  cat("Edge Inclusion 'Probabilities':\n\n")
-  print(data.frame(Relation = x$eip_results$Relation,
-                   EIP = x$eip_results$EIP),
-        row.names = F)
-  cat("-----")
+print.eip <- function(x, ...) {
+    cat("Edge Inclusion 'Probabilities':\n\n")
+    print(data.frame(Relation = x$eip_results$Relation,
+                     EIP = x$eip_results$EIP),
+          row.names = F)
+    cat("-----")
+    invisible(x)
 }
 
 #' Print the Head of \code{eip} Objects
@@ -168,7 +173,14 @@ print.eip <- function(x, ...){
 #'
 #' @param ... Currently ignored.
 #'
+#' @return Invisibly returns a data frame containing the first \code{n} rows of
+#'   \code{x$eip_results}. The returned data frame contains the leading edge
+#'   relations and their edge inclusion probabilities, and is printed as a side
+#'   effect.
+#'
 #' @export
-head.eip <- function(x, n = 5,...){
-  print(x$eip_results[1:n,], row.names = FALSE )
+head.eip <- function(x, n = 5, ...) {
+    out <- x$eip_results[1:n, ]
+    print(out, row.names = FALSE)
+    invisible(out)
 }

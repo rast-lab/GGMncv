@@ -954,37 +954,37 @@ ggmncv <- function(R,
 }
 
 
+
 #' Print \code{ggmncv} Objects
 #'
-#' @param x An object of class \code{ggmncv}
+#' @param x An object of class \code{ggmncv}.
 #'
-#' @param ... Currently ignored
+#' @param ... Currently ignored.
+#'
+#' @return Invisibly returns \code{x}, the input object of class \code{ggmncv}.
+#'   The method is called primarily for its side effect of printing a summary
+#'   of the fitted model object. The printed output depends on the additional
+#'   class of \code{x}; it may summarize the default fitted model, coefficient
+#'   output, inference results, or model-comparison results.
 #'
 #' @importFrom methods is
 #'
 #' @export
-print.ggmncv <- function(x,...){
-
-  if(methods::is(x, "default")){
-
-    print_ggmncv(x,...)
-
-  }
-  if(methods::is(x, "coef")){
-
-    print_coef(x,...)
-  }
-
-  if(methods::is(x, "inference")){
-    print_inference(x, ...)
-  }
-
-  if(methods::is(x, "ggm_compare")){
-    print_compare(x,...)
-  }
-
+print.ggmncv <- function(x, ...) {
+    if (methods::is(x, "default")) {
+        print_ggmncv(x, ...)
+    }
+    if (methods::is(x, "coef")) {
+        print_coef(x, ...)
+    }
+    if (methods::is(x, "inference")) {
+        print_inference(x, ...)
+    }
+    if (methods::is(x, "ggm_compare")) {
+        print_compare(x, ...)
+    }
+    invisible(x)
 }
-
 
 
 #' Plot \code{ggmncv} Objects

@@ -7,9 +7,16 @@
 \method{print}{ggmncv}(x, ...)
 }
 \arguments{
-\item{x}{An object of class \code{ggmncv}}
+\item{x}{An object of class \code{ggmncv}.}
 
-\item{...}{Currently ignored}
+\item{...}{Currently ignored.}
+}
+\value{
+Invisibly returns \code{x}, the input object of class \code{ggmncv}.
+  The method is called primarily for its side effect of printing a summary
+  of the fitted model object. The printed output depends on the additional
+  class of \code{x}; it may summarize the default fitted model, coefficient
+  output, inference results, or model-comparison results.
 }
 \description{
 Print \code{ggmncv} Objects

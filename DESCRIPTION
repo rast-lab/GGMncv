@@ -1,20 +1,23 @@
 Package: GGMncv
 Type: Package
 Title: Gaussian Graphical Models with Nonconvex Regularization
-Version: 2.1.1.9000 
+Version: 2.1.1.9000
 Date: 2026-4-28
 Authors@R: c(person("Donald", "Williams", email = "drwwilliams@ucdavis.edu", role = "aut"),
 	     person("Philippe", "Rast", email = "rast.ph@gmail.com", role = c("cre")))
-Description: Estimate Gaussian graphical models with nonconvex penalties <doi:10.31234/osf.io/ad57p>, 
-  including the atan Wang and Zhu (2016) <doi:10.1155/2016/6495417>, 
-  seamless L0 Dicker, Huang, and Lin (2013) <doi:10.5705/ss.2011.074>,
-  exponential Wang, Fan, and Zhu <doi:10.1007/s10463-016-0588-3>, 
-  smooth integration of counting and absolute deviation Lv and Fan (2009) <doi:10.1214/09-AOS683>,
-  logarithm Mazumder, Friedman, and Hastie (2011) <doi:10.1198/jasa.2011.tm09738>,
-  Lq, smoothly clipped absolute deviation Fan and Li (2001) <doi:10.1198/016214501753382273>,
-  and minimax concave penalty Zhang (2010) <doi:10.1214/09-AOS729>. There are also extensions
-  for computing variable inclusion probabilities, multiple regression coefficients, and 
-  statistical inference <doi:10.1214/15-EJS1031>.
+Description: Estimate Gaussian graphical models with nonconvex penalties,
+  including methods described by Williams (2020) <doi:10.31234/osf.io/ad57p>.
+  Penalties include atan (Wang and Zhu, 2016) <doi:10.1155/2016/6495417>,
+  seamless L0 (Dicker, Huang and Lin, 2013) <doi:10.5705/ss.2011.074>,
+  exponential (Wang, Fan and Zhu, 2018) <doi:10.1007/s10463-016-0588-3>,
+  smooth integration of counting and absolute deviation (Lv and Fan, 2009)
+  <doi:10.1214/09-AOS683>, logarithm (Mazumder, Friedman and Hastie, 2011)
+  <doi:10.1198/jasa.2011.tm09738>, Lq, smoothly clipped absolute deviation
+  (Fan and Li, 2001) <doi:10.1198/016214501753382273>, and minimax concave
+  penalty (Zhang, 2010) <doi:10.1214/09-AOS729>. The package also provides
+  extensions for variable inclusion probabilities, multiple regression
+  coefficients, and statistical inference (Janková and van de Geer, 2015)
+  <doi:10.1214/15-EJS1031>.
 License: GPL-2
 Depends: R (>= 4.0.0)
 Imports:

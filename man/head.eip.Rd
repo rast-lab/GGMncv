@@ -13,6 +13,12 @@
 
 \item{...}{Currently ignored.}
 }
+\value{
+Invisibly returns a data frame containing the first \code{n} rows of
+  \code{x$eip_results}. The returned data frame contains the leading edge
+  relations and their edge inclusion probabilities, and is printed as a side
+  effect.
+}
 \description{
 Print the Head of \code{eip} Objects
 }

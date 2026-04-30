@@ -11,6 +11,11 @@
 
 \item{...}{Currently ignored.}
 }
+\value{
+Invisibly returns \code{x}, the input object of class \code{eip}.
+  The method is called for its side effect of printing a data frame with
+  the edge relations and their edge inclusion probabilities.
+}
 \description{
 Print \code{eip} Objects
 }

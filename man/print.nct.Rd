@@ -7,9 +7,16 @@
 \method{print}{nct}(x, ...)
 }
 \arguments{
-\item{x}{An object of class \code{nct}}
+\item{x}{An object of class \code{nct}.}
 
 \item{...}{Currently ignored.}
+}
+\value{
+Invisibly returns \code{x}, the input object of class \code{nct}.
+  The method is called primarily for its side effect of printing the results
+  of the network comparison test, including p-values for the maximum
+  difference, global strength, sum of squared error, and Jensen-Shannon
+  divergence statistics stored in the object.
 }
 \description{
 Print \code{nct} Objects
